@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {useEffect, useState} from 'react';
+import WindowSize from './windowSize';
+// import size from './size';
 
 function App() {
+  const[text,setText]=useState('');
+
+    
+
+  // useEffect(()=>{
+  //     console.log("AB");
+  // });
+
+  // useEffect(()=>{
+  //   console.log("AB");
+  // },[]);
+
+  // useEffect(()=>{
+  //     console.log("Hii")
+  // },[text]);
+
+  useEffect(()=>{
+    console.log("add")
+      return ()=>{
+        console.log("remove")
+      }
+  },[text]);
+
+ 
+
+  function changeHandler(event){
+    setText(event.target.value);  
+    console.log(text);
+  }
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+        <WindowSize></WindowSize>
+  </div> 
   );
 }
 
